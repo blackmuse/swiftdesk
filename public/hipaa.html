@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — HIPAA Compliance Notice</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="/" class="navbar-brand">
+    <div class="logo-icon">⚡</div>
+    SwiftDesk
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="/#features">Features</a></li>
+    <li><a href="/#how-it-works">How It Works</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <a href="/login.html" class="btn btn-ghost btn-sm">Log In</a>
+    <a href="/login.html?tab=register" class="btn btn-primary btn-sm">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="static-page">
+
+  <h1>HIPAA Compliance Notice</h1>
+  <p><strong>Last Updated:</strong> May 2025</p>
+
+  <p>SwiftDesk takes the privacy and security of health information seriously. This notice explains how SwiftDesk handles data in relation to the Health Insurance Portability and Accountability Act (HIPAA) and what steps you should take to use our platform responsibly.</p>
+
+  <div class="warning-box">
+    <strong>Important:</strong> SwiftDesk is a drafting assistant. We strongly recommend that users de-identify patient data before submitting it to any AI tool, including SwiftDesk. Do not submit fully identified Protected Health Information (PHI) unless your organization has executed a Business Associate Agreement (BAA) with us (available on the Agency plan).
+  </div>
+
+  <h2>How SwiftDesk Handles Data</h2>
+
+  <h3>What We Process</h3>
+  <p>When you use a SwiftDesk tool, the content you enter — clinical notes, billing codes, denial reasons, patient balances — is transmitted to Anthropic's Claude API to generate a response. This content is processed in transit and is not permanently stored by SwiftDesk after the response is returned to you.</p>
+
+  <h3>What We Store</h3>
+  <p>SwiftDesk stores the following user data:</p>
+  <ul>
+    <li>Account information (name, email, hashed password)</li>
+    <li>Subscription status and usage counts</li>
+    <li>Stripe customer and subscription identifiers</li>
+  </ul>
+  <p>We do <strong>not</strong> store the text content you submit to our AI tools.</p>
+
+  <h3>Third-Party AI Processing (Anthropic)</h3>
+  <p>Content submitted to SwiftDesk tools is processed by Anthropic's API. Anthropic maintains its own privacy and security policies. For the most current information on how Anthropic handles API data, review Anthropic's Privacy Policy and API Terms of Service directly.</p>
+
+  <h2>Recommended Practices for HIPAA Compliance</h2>
+  <p>To minimize HIPAA risk when using SwiftDesk:</p>
+  <ul>
+    <li><strong>De-identify patient data</strong> before submission. Replace patient names with initials or placeholder names (e.g., "Patient A"). Remove or abbreviate dates of birth, member IDs, and claim numbers where possible.</li>
+    <li><strong>Use the minimum necessary information</strong> to get the output you need. You don't need to include a patient's full name to get a quality denial appeal letter.</li>
+    <li><strong>Do not use SwiftDesk on unsecured devices</strong> or unsecured networks. Always access the platform from a secure, organization-managed device.</li>
+    <li><strong>Review all outputs</strong> before including any patient-specific information in a final document.</li>
+  </ul>
+
+  <h2>Business Associate Agreements (BAA)</h2>
+  <p>A Business Associate Agreement is available to customers on the <strong>Agency plan</strong>. The BAA formalizes our obligations regarding the handling of PHI on your behalf in compliance with 45 CFR Part 164.</p>
+  <p>If you require a BAA, please contact us at <strong>hipaa@swiftdesk.io</strong>. Agency plan subscribers will receive BAA documentation as part of their onboarding.</p>
+
+  <h2>Security Measures</h2>
+  <p>SwiftDesk implements the following technical safeguards:</p>
+  <ul>
+    <li>All data is transmitted over HTTPS with TLS encryption</li>
+    <li>User passwords are hashed using bcrypt — never stored in plain text</li>
+    <li>Access to backend systems is restricted and authenticated</li>
+    <li>Payment processing is fully delegated to Stripe, which is PCI-DSS compliant</li>
+  </ul>
+
+  <h2>Covered Entity Responsibility</h2>
+  <p>SwiftDesk provides tools to assist covered entities and their business associates. It is the responsibility of the covered entity (the healthcare provider or billing company) to ensure that their use of SwiftDesk complies with their own HIPAA obligations, workforce training requirements, and risk management policies.</p>
+
+  <div class="notice-box">
+    <strong>Questions about HIPAA compliance?</strong> Contact our compliance team at <strong>hipaa@swiftdesk.io</strong> or review our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">⚡ SwiftDesk</div>
+      <p>AI-powered medical billing tools built to help billing teams work faster, recover more revenue, and reduce administrative burden.</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/login.html">Log In</a></li>
+        <li><a href="/login.html?tab=register">Sign Up</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="/login.html">Denial Appeal Writer</a></li>
+        <li><a href="/login.html">CPT/ICD Suggester</a></li>
+        <li><a href="/login.html">AR Follow-up Generator</a></li>
+        <li><a href="/login.html">Monthly Report Builder</a></li>
+        <li><a href="/login.html">Patient Statement Generator</a></li>
+        <li><a href="/login.html">Prior Auth Assistant</a></li>
+        <li><a href="/login.html">EOB Interpreter</a></li>
+        <li><a href="/login.html">Charge Capture Check</a></li>
+        <li><a href="/login.html">Credentialing Helper</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/hipaa.html">HIPAA Compliance</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SwiftDesk. All rights reserved.</span>
+    <span>Built with AI for medical billing professionals.</span>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
