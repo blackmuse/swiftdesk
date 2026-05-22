@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — Payment Cancelled</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--background); }
+    .cancel-card {
+      background: white;
+      border-radius: 24px;
+      padding: 56px 48px;
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    }
+    .cancel-icon {
+      width: 80px; height: 80px;
+      background: var(--surface-2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.25rem;
+      margin: 0 auto 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cancel-card">
+    <div class="cancel-icon">↩️</div>
+    <h2 style="margin-bottom:12px;">Payment Cancelled</h2>
+    <p style="font-size:1.0625rem;margin-bottom:12px;">No worries — you haven't been charged. Your free account is still active.</p>
+    <p style="margin-bottom:32px;">Ready to unlock all 9 AI tools? You can subscribe any time from your dashboard.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <a href="/dashboard.html" class="btn btn-primary btn-full">Back to Dashboard</a>
+      <a href="/#pricing" class="btn btn-ghost btn-full">View Pricing Plans</a>
+    </div>
+  </div>
+</body>
+</html>

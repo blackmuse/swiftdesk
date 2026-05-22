@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">⚡</div>
+      <span class="sidebar-brand">SwiftDesk</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-label">Overview</div>
+        <a href="/dashboard.html" class="nav-item active" data-page="dashboard">
+          <span class="nav-icon">🏠</span> Dashboard
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/denial-appeal.html" class="nav-item" data-page="denial-appeal">
+          <span class="nav-icon">📋</span> Denial Appeal Writer
+        </a>
+        <a href="/cpt-suggester.html" class="nav-item" data-page="cpt-suggester">
+          <span class="nav-icon">🔬</span> CPT/ICD Suggester
+        </a>
+        <a href="/ar-followup.html" class="nav-item" data-page="ar-followup">
+          <span class="nav-icon">📞</span> AR Follow-up Generator
+        </a>
+        <a href="/monthly-report.html" class="nav-item" data-page="monthly-report">
+          <span class="nav-icon">📊</span> Monthly Report Builder
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Workflow Tools</div>
+        <a href="/patient-statement.html" class="nav-item" data-page="patient-statement">
+          <span class="nav-icon">🧾</span> Patient Statement
+        </a>
+        <a href="/prior-auth.html" class="nav-item" data-page="prior-auth">
+          <span class="nav-icon">✅</span> Prior Auth Assistant
+        </a>
+        <a href="/eob-interpreter.html" class="nav-item" data-page="eob-interpreter">
+          <span class="nav-icon">📄</span> EOB Interpreter
+        </a>
+        <a href="/charge-capture.html" class="nav-item" data-page="charge-capture">
+          <span class="nav-icon">🔍</span> Charge Capture Check
+        </a>
+        <a href="/credentialing.html" class="nav-item" data-page="credentialing">
+          <span class="nav-icon">🏥</span> Credentialing Helper
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Account</div>
+        <a href="#" class="nav-item" id="upgrade-link">
+          <span class="nav-icon">⭐</span> Upgrade to Pro
+        </a>
+        <a href="#" class="nav-item" data-logout>
+          <span class="nav-icon">🚪</span> Log Out
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" data-user-avatar>J</div>
+        <div>
+          <div class="user-name" data-user-name>Loading...</div>
+          <div class="user-plan" data-user-plan>Free Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p style="margin:0">Welcome back, <span data-user-name>there</span>!</p>
+      </div>
+      <div class="badge badge-blue" data-user-plan>Free Plan</div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total AI Uses</div>
+          <div class="stat-value" id="stat-usage">—</div>
+          <div class="stat-change up">This month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Tools Available</div>
+          <div class="stat-value">9</div>
+          <div class="stat-change">AI-powered tools</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Current Plan</div>
+          <div class="stat-value" style="font-size:1.375rem;" data-user-plan>Free</div>
+          <div class="stat-change"><a href="#" id="upgrade-stat" style="color:var(--primary);font-weight:600;">Upgrade →</a></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Member Since</div>
+          <div class="stat-value" style="font-size:1.375rem;" id="stat-member">—</div>
+          <div class="stat-change">Account active</div>
+        </div>
+      </div>
+
+      <!-- QUICK ACCESS -->
+      <div style="margin-bottom:12px;">
+        <h3 style="margin-bottom:8px;">Billing Tools</h3>
+        <p style="font-size:0.9375rem;margin-bottom:20px;">Core billing workflows powered by AI.</p>
+        <div class="tools-quick-grid">
+          <a href="/denial-appeal.html" class="tool-quick-card">
+            <div class="tool-quick-icon">📋</div>
+            <h4>Denial Appeal Writer</h4>
+            <p>Generate professional insurance denial appeal letters with clinical justifications.</p>
+            <div style="margin-top:16px;"><span class="badge badge-blue">Popular</span></div>
+          </a>
+          <a href="/cpt-suggester.html" class="tool-quick-card">
+            <div class="tool-quick-icon">🔬</div>
+            <h4>CPT/ICD Code Suggester</h4>
+            <p>Paste clinical notes and get accurate CPT codes, ICD-10 codes, and modifiers.</p>
+            <div style="margin-top:16px;"><span class="badge badge-green">Time Saver</span></div>
+          </a>
+          <a href="/ar-followup.html" class="tool-quick-card">
+            <div class="tool-quick-icon">📞</div>
+            <h4>AR Follow-up Generator</h4>
+            <p>Phone scripts, follow-up emails, and escalation paths for outstanding AR.</p>
+            <div style="margin-top:16px;"><span class="badge badge-amber">Revenue</span></div>
+          </a>
+          <a href="/monthly-report.html" class="tool-quick-card">
+            <div class="tool-quick-icon">📊</div>
+            <h4>Monthly Report Builder</h4>
+            <p>Transform billing metrics into polished executive reports with KPI analysis.</p>
+            <div style="margin-top:16px;"><span class="badge badge-blue">Analytics</span></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- WORKFLOW TOOLS -->
+      <div style="margin-bottom:24px;">
+        <h3 style="margin-bottom:8px;">Workflow Tools</h3>
+        <p style="font-size:0.9375rem;margin-bottom:20px;">Advanced tools for patient communication, compliance, and provider operations.</p>
+        <div class="tools-quick-grid">
+          <a href="/patient-statement.html" class="tool-quick-card">
+            <div class="tool-quick-icon">🧾</div>
+            <h4>Patient Statement Generator</h4>
+            <p>Create clear, professional patient billing statements with itemized charges and payment options.</p>
+            <div style="margin-top:16px;"><span class="badge badge-green">Patient-Facing</span></div>
+          </a>
+          <a href="/prior-auth.html" class="tool-quick-card">
+            <div class="tool-quick-icon">✅</div>
+            <h4>Prior Auth Assistant</h4>
+            <p>Write compelling prior authorization requests with clinical justifications to maximize approvals.</p>
+            <div style="margin-top:16px;"><span class="badge badge-blue">Approvals</span></div>
+          </a>
+          <a href="/eob-interpreter.html" class="tool-quick-card">
+            <div class="tool-quick-icon">📄</div>
+            <h4>EOB Interpreter</h4>
+            <p>Translate complex Explanation of Benefits documents into plain English with action items.</p>
+            <div style="margin-top:16px;"><span class="badge badge-amber">Clarity</span></div>
+          </a>
+          <a href="/charge-capture.html" class="tool-quick-card">
+            <div class="tool-quick-icon">🔍</div>
+            <h4>Charge Capture Check</h4>
+            <p>Audit clinical documentation against submitted charges to catch missing or incorrect codes.</p>
+            <div style="margin-top:16px;"><span class="badge badge-blue">Compliance</span></div>
+          </a>
+          <a href="/credentialing.html" class="tool-quick-card">
+            <div class="tool-quick-icon">🏥</div>
+            <h4>Credentialing Helper</h4>
+            <p>Navigate provider enrollment paperwork, CAQH applications, and insurance credentialing.</p>
+            <div style="margin-top:16px;"><span class="badge badge-green">Enrollment</span></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- PRICING / UPGRADE SECTION -->
+      <div id="billing-section">
+
+        <!-- Upgrade banner (shown for free users) -->
+        <div id="upgrade-banner" style="display:none;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:16px;padding:32px 36px;color:white;margin-bottom:28px;">
+          <h3 style="color:white;margin-bottom:8px;">Unlock All 9 AI Tools</h3>
+          <p style="color:rgba(255,255,255,0.82);margin-bottom:24px;max-width:560px;">Choose a plan to get started. No setup fees, no contracts — cancel any time from your billing portal.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:720px;">
+            <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:12px;padding:20px;">
+              <div style="font-size:1.5rem;font-weight:800;color:white;">$99<span style="font-size:0.875rem;font-weight:500;opacity:0.8;">/mo</span></div>
+              <div style="font-weight:700;margin:4px 0 8px;color:white;">Starter</div>
+              <div style="font-size:0.8125rem;opacity:0.8;margin-bottom:16px;">50 uses/mo · 4 core tools</div>
+              <button class="btn btn-sm" style="background:white;color:#1e40af;width:100%;" onclick="startCheckout('starter',this)">Subscribe</button>
+            </div>
+            <div style="background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.6);border-radius:12px;padding:20px;position:relative;">
+              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-size:0.75rem;font-weight:700;padding:3px 14px;border-radius:100px;white-space:nowrap;">Most Popular</div>
+              <div style="font-size:1.5rem;font-weight:800;color:white;">$299<span style="font-size:0.875rem;font-weight:500;opacity:0.8;">/mo</span></div>
+              <div style="font-weight:700;margin:4px 0 8px;color:white;">Pro</div>
+              <div style="font-size:0.8125rem;opacity:0.8;margin-bottom:16px;">Unlimited · All 9 tools</div>
+              <button class="btn btn-sm" style="background:white;color:#1e40af;width:100%;" onclick="startCheckout('pro',this)">Subscribe</button>
+            </div>
+            <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:12px;padding:20px;">
+              <div style="font-size:1.5rem;font-weight:800;color:white;">$499<span style="font-size:0.875rem;font-weight:500;opacity:0.8;">/mo</span></div>
+              <div style="font-weight:700;margin:4px 0 8px;color:white;">Agency</div>
+              <div style="font-size:0.8125rem;opacity:0.8;margin-bottom:16px;">Multi-provider · API · BAA</div>
+              <button class="btn btn-sm" style="background:white;color:#1e40af;width:100%;" onclick="startCheckout('agency',this)">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active subscription card (shown for paid users) -->
+        <div id="subscription-card" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:28px;">
+          <div>
+            <div style="font-size:0.8125rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px;">Active Plan</div>
+            <div style="font-size:1.5rem;font-weight:800;color:var(--text-primary);" id="active-plan-name">Pro</div>
+            <div style="font-size:0.9375rem;color:var(--text-secondary);margin-top:4px;" id="active-plan-desc">Unlimited AI tool uses · All 9 tools</div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="btn btn-ghost" id="manage-billing-btn">Manage Billing →</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (!requireAuth()) { /* redirected */ }
+
+  initUserInfo();
+  initLogoutButtons();
+  setActiveNav('dashboard');
+
+  const PLAN_LABELS = {
+    free:    { name: 'Free',    desc: '10 uses/month · 2 core tools' },
+    starter: { name: 'Starter', desc: '50 uses/month · 4 core tools' },
+    pro:     { name: 'Pro',     desc: 'Unlimited uses · All 9 tools' },
+    agency:  { name: 'Agency',  desc: 'Unlimited · Multi-provider · API' },
+  };
+
+  async function loadDashboard() {
+    try {
+      const user = await apiGet('/auth/me');
+      document.getElementById('stat-usage').textContent = user.usageCount || 0;
+      const joined = new Date(user.createdAt || Date.now());
+      document.getElementById('stat-member').textContent = joined.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+      const plan = user.plan || 'free';
+
+      // Update plan badge in header
+      document.querySelectorAll('[data-user-plan]').forEach(el => {
+        el.textContent = (PLAN_LABELS[plan]?.name || 'Free') + ' Plan';
+      });
+
+      if (plan === 'free') {
+        document.getElementById('upgrade-banner').style.display = 'block';
+        document.getElementById('subscription-card').style.display = 'none';
+      } else {
+        document.getElementById('upgrade-banner').style.display = 'none';
+        document.getElementById('subscription-card').style.display = 'flex';
+        document.getElementById('active-plan-name').textContent = PLAN_LABELS[plan]?.name || plan;
+        document.getElementById('active-plan-desc').textContent = PLAN_LABELS[plan]?.desc || '';
+      }
+    } catch (err) {
+      if (err.message.includes('token') || err.message.includes('expired')) {
+        clearSession();
+        window.location.href = '/login.html';
+      }
+    }
+  }
+
+  async function startCheckout(planId, btn) {
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Redirecting...';
+    try {
+      const result = await apiPost('/billing/create-checkout-session', { planId });
+      if (result.url) {
+        window.location.href = result.url;
+      } else {
+        showAlert('Could not start checkout. Please try again.', 'error');
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    } catch (err) {
+      showAlert(err.message, 'error');
+      btn.disabled = false;
+      btn.textContent = original;
+    }
+  }
+
+  document.getElementById('manage-billing-btn')?.addEventListener('click', async () => {
+    const btn = document.getElementById('manage-billing-btn');
+    btn.disabled = true;
+    btn.textContent = 'Opening portal...';
+    try {
+      const result = await apiPost('/billing/portal', {});
+      if (result.url) window.location.href = result.url;
+    } catch (err) {
+      showAlert(err.message, 'error');
+      btn.disabled = false;
+      btn.textContent = 'Manage Billing →';
+    }
+  });
+
+  // Sidebar upgrade link → scroll to plans
+  document.getElementById('upgrade-link')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('upgrade-banner')?.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Stat upgrade link
+  document.getElementById('upgrade-stat')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('upgrade-banner')?.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  loadDashboard();
+</script>
+</body>
+</html>

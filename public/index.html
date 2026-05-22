@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — AI-Powered Medical Billing Platform</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .hero-section { background: linear-gradient(180deg, rgba(30,64,175,0.04) 0%, transparent 60%); }
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      text-align: center;
+      padding: 96px 40px;
+    }
+    .cta-section h2 { color: white; margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.125rem; margin-bottom: 36px; }
+    .cta-section .btn-primary { background: white; color: var(--primary); }
+    .cta-section .btn-primary:hover { background: var(--background); }
+    .cta-section .btn-secondary { border-color: rgba(255,255,255,0.5); color: white; }
+    .cta-section .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+    .bg-surface { background: var(--surface); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="/" class="navbar-brand">
+    <div class="logo-icon">⚡</div>
+    SwiftDesk
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <a href="/login.html" class="btn btn-ghost btn-sm" id="nav-login">Log In</a>
+    <a href="/login.html?tab=register" class="btn btn-primary btn-sm">Start Free Trial</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero">
+    <div class="hero-badge">🏥 Built for Medical Billing Teams</div>
+    <h1>Supercharge Your Medical<br>Billing with AI</h1>
+    <p>SwiftDesk gives your billing team 9 powerful AI tools — from denial appeals to provider credentialing — so you can work faster, recover more revenue, and spend less time on administrative work.</p>
+    <div class="hero-actions">
+      <a href="/login.html?tab=register" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="#features" class="btn btn-ghost btn-lg">See the Tools →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">9</div>
+        <div class="label">AI-Powered Tools</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">85%</div>
+        <div class="label">Appeal Success Rate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">10x</div>
+        <div class="label">Faster Than Manual</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">HIPAA</div>
+        <div class="label">Compliant Platform</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-header">
+      <h2>Everything Your Billing Team Needs</h2>
+      <p>9 specialized AI tools built specifically for medical billing workflows — not generic AI retrofitted for healthcare.</p>
+    </div>
+
+    <div style="margin-bottom:48px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <div style="height:2px;flex:1;background:var(--border);"></div>
+        <span style="font-size:0.8125rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap;">Billing Tools</span>
+        <div style="height:2px;flex:1;background:var(--border);"></div>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue">📋</div>
+          <h3>Denial Appeal Writer</h3>
+          <p>Generate professional, medically accurate insurance denial appeal letters in seconds. Our AI references clinical guidelines and payer-specific policies to maximize your overturn rate.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">🔬</div>
+          <h3>CPT/ICD Code Suggester</h3>
+          <p>Paste clinical notes and get accurate CPT codes, ICD-10 diagnosis codes, and modifiers with full justifications. Catch missed codes and reduce claim rejections before submission.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon amber">📞</div>
+          <h3>AR Follow-up Generator</h3>
+          <p>Create complete phone scripts, follow-up emails, and escalation paths for outstanding accounts receivable. Never miss a follow-up or lose track of aging claims again.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">📊</div>
+          <h3>Monthly Report Builder</h3>
+          <p>Turn raw billing metrics into polished executive reports with trend analysis, KPI dashboards, and prioritized action items — ready to present to practice leadership.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <div style="height:2px;flex:1;background:var(--border);"></div>
+        <span style="font-size:0.8125rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap;">Workflow Tools</span>
+        <div style="height:2px;flex:1;background:var(--border);"></div>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon green">🧾</div>
+          <h3>Patient Statement Generator</h3>
+          <p>Create clear, professional patient billing statements with itemized charges, insurance summaries, and payment options — written so patients actually understand what they owe.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon blue">✅</div>
+          <h3>Prior Authorization Assistant</h3>
+          <p>Write compelling prior authorization requests backed by clinical evidence and specialty guidelines. Reduce denials at the door before services are ever rendered.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon amber">📄</div>
+          <h3>EOB Interpreter</h3>
+          <p>Paste any Explanation of Benefits document and get a plain-English breakdown — what was paid, what was denied, why, and exactly what action to take next.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">🔍</div>
+          <h3>Charge Capture Check</h3>
+          <p>Audit clinical documentation against submitted charges to catch missing codes, undercoding, bundling errors, and compliance risks before claims go out the door.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon blue">🏥</div>
+          <h3>Credentialing Document Helper</h3>
+          <p>Navigate provider enrollment paperwork, CAQH applications, and payer-specific credentialing with step-by-step AI guidance, cover letters, and document checklists.</p>
+          <a href="/login.html?tab=register" class="feature-link">Try it free →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get Results in 3 Simple Steps</h2>
+      <p>No lengthy onboarding, no training required. Start generating results in minutes.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Enter Your Details</h4>
+        <p>Input your patient or billing information into the relevant tool form. Our structured forms capture exactly what the AI needs.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>AI Generates Instantly</h4>
+        <p>Claude AI processes your information in seconds, streaming back professional-grade content in real time.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Review and Use</h4>
+        <p>Review the output, make any needed edits, copy it to your clipboard, and put it to work immediately.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h4>Track Performance</h4>
+        <p>Monitor your usage, track trends, and use the Monthly Report Builder to measure improvements over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="bg-surface">
+  <div class="container">
+    <div class="section-header">
+      <h2>Simple, Transparent Pricing</h2>
+      <p>No setup fees, no contracts. Cancel any time.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">
+          <span class="amount">$99</span>
+          <span class="period">/month</span>
+        </div>
+        <p class="pricing-desc">For small practices getting started with AI billing automation.</p>
+        <ul class="pricing-features">
+          <li>50 AI tool uses per month</li>
+          <li>Denial Appeal Writer</li>
+          <li>CPT/ICD Code Suggester</li>
+          <li>Patient Statement Generator</li>
+          <li>EOB Interpreter</li>
+          <li>Email support</li>
+        </ul>
+        <a href="/login.html?tab=register" class="btn btn-secondary btn-full" data-plan="starter">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-price">
+          <span class="amount">$299</span>
+          <span class="period">/month</span>
+        </div>
+        <p class="pricing-desc">For active billing teams that need unlimited access to all 9 tools.</p>
+        <ul class="pricing-features">
+          <li>Unlimited AI tool uses</li>
+          <li>All 9 AI tools</li>
+          <li>Prior Auth Assistant</li>
+          <li>Charge Capture Check</li>
+          <li>Credentialing Helper</li>
+          <li>Priority support</li>
+          <li>Export to PDF/Word</li>
+        </ul>
+        <a href="/login.html?tab=register" class="btn btn-primary btn-full" data-plan="pro">Start Pro</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Agency</div>
+        <div class="pricing-price">
+          <span class="amount">$499</span>
+          <span class="period">/month</span>
+        </div>
+        <p class="pricing-desc">For billing companies and large practices managing multiple providers.</p>
+        <ul class="pricing-features">
+          <li>Everything in Pro</li>
+          <li>Multi-provider support (up to 20)</li>
+          <li>Dedicated account manager</li>
+          <li>HIPAA BAA included</li>
+          <li>API access</li>
+          <li>White-label options</li>
+          <li>Custom AI fine-tuning</li>
+        </ul>
+        <a href="/login.html?tab=register" class="btn btn-secondary btn-full" data-plan="agency">Get Agency</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Modernize Your Billing?</h2>
+  <p>Join hundreds of billing teams already using SwiftDesk to recover more revenue with less effort.</p>
+  <div class="hero-actions">
+    <a href="/login.html?tab=register" class="btn btn-primary btn-lg">Start Free Today</a>
+    <a href="#features" class="btn btn-secondary btn-lg">Learn More</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">⚡ SwiftDesk</div>
+      <p>AI-powered medical billing tools built to help billing teams work faster, recover more revenue, and reduce administrative burden.</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="/login.html">Log In</a></li>
+        <li><a href="/login.html?tab=register">Sign Up</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="/login.html">Denial Appeal Writer</a></li>
+        <li><a href="/login.html">CPT/ICD Suggester</a></li>
+        <li><a href="/login.html">AR Follow-up Generator</a></li>
+        <li><a href="/login.html">Monthly Report Builder</a></li>
+        <li><a href="/login.html">Patient Statement Generator</a></li>
+        <li><a href="/login.html">Prior Auth Assistant</a></li>
+        <li><a href="/login.html">EOB Interpreter</a></li>
+        <li><a href="/login.html">Charge Capture Check</a></li>
+        <li><a href="/login.html">Credentialing Helper</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">HIPAA Compliance</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 SwiftDesk. All rights reserved.</span>
+    <span>Built with AI for medical billing professionals.</span>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script>
+  const user = getUser();
+  if (user) {
+    document.getElementById('nav-login').textContent = 'Dashboard';
+    document.getElementById('nav-login').href = '/dashboard.html';
+  }
+</script>
+</body>
+</html>

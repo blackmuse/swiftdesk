@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — Denial Appeal Writer</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">⚡</div>
+      <span class="sidebar-brand">SwiftDesk</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-label">Overview</div>
+        <a href="/dashboard.html" class="nav-item" data-page="dashboard">
+          <span class="nav-icon">🏠</span> Dashboard
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/denial-appeal.html" class="nav-item active" data-page="denial-appeal">
+          <span class="nav-icon">📋</span> Denial Appeal Writer
+        </a>
+        <a href="/cpt-suggester.html" class="nav-item" data-page="cpt-suggester">
+          <span class="nav-icon">🔬</span> CPT/ICD Suggester
+        </a>
+        <a href="/ar-followup.html" class="nav-item" data-page="ar-followup">
+          <span class="nav-icon">📞</span> AR Follow-up Generator
+        </a>
+        <a href="/monthly-report.html" class="nav-item" data-page="monthly-report">
+          <span class="nav-icon">📊</span> Monthly Report Builder
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Workflow Tools</div>
+        <a href="/patient-statement.html" class="nav-item" data-page="patient-statement">
+          <span class="nav-icon">🧾</span> Patient Statement
+        </a>
+        <a href="/prior-auth.html" class="nav-item" data-page="prior-auth">
+          <span class="nav-icon">✅</span> Prior Auth Assistant
+        </a>
+        <a href="/eob-interpreter.html" class="nav-item" data-page="eob-interpreter">
+          <span class="nav-icon">📄</span> EOB Interpreter
+        </a>
+        <a href="/charge-capture.html" class="nav-item" data-page="charge-capture">
+          <span class="nav-icon">🔍</span> Charge Capture Check
+        </a>
+        <a href="/credentialing.html" class="nav-item" data-page="credentialing">
+          <span class="nav-icon">🏥</span> Credentialing Helper
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Account</div>
+        <a href="#" class="nav-item" data-logout>
+          <span class="nav-icon">🚪</span> Log Out
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" data-user-avatar>J</div>
+        <div>
+          <div class="user-name" data-user-name>Loading...</div>
+          <div class="user-plan" data-user-plan>Free Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1>📋 Denial Appeal Writer</h1>
+        <p style="margin:0">Generate a professional insurance denial appeal letter in seconds.</p>
+      </div>
+      <span class="badge badge-blue">AI-Powered</span>
+    </div>
+
+    <div class="page-body">
+      <div class="tool-layout">
+
+        <!-- INPUT PANEL -->
+        <div class="tool-panel">
+          <div class="tool-panel-header">
+            <h3>Claim Information</h3>
+            <span class="badge badge-blue">Required fields marked *</span>
+          </div>
+          <div class="tool-panel-body">
+            <form id="appeal-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="patientName">Patient Name *</label>
+                  <input type="text" id="patientName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="dob">Date of Birth</label>
+                  <input type="date" id="dob">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="memberId">Member ID</label>
+                  <input type="text" id="memberId" placeholder="XYZ123456789">
+                </div>
+                <div class="form-group">
+                  <label for="insurancePlan">Insurance Plan</label>
+                  <input type="text" id="insurancePlan" placeholder="Blue Cross PPO">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="serviceDate">Service Date</label>
+                  <input type="date" id="serviceDate">
+                </div>
+                <div class="form-group">
+                  <label for="claimNumber">Claim Number</label>
+                  <input type="text" id="claimNumber" placeholder="CLM-2024-001234">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cptCodes">CPT Code(s)</label>
+                  <input type="text" id="cptCodes" placeholder="99213, 93000">
+                </div>
+                <div class="form-group">
+                  <label for="diagnosisCodes">ICD-10 Code(s)</label>
+                  <input type="text" id="diagnosisCodes" placeholder="I10, E11.9">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="providerName">Provider Name</label>
+                  <input type="text" id="providerName" placeholder="Dr. Sarah Johnson, MD">
+                </div>
+                <div class="form-group">
+                  <label for="npi">NPI Number</label>
+                  <input type="text" id="npi" placeholder="1234567890">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="denialReason">Denial Reason *</label>
+                <textarea id="denialReason" placeholder="e.g., Medical necessity not established. Service deemed not medically necessary per plan guidelines. Lack of documentation supporting the necessity for the requested procedure." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="generate-btn">
+                Generate Appeal Letter
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- OUTPUT PANEL -->
+        <div class="tool-panel" style="position:sticky;top:24px;">
+          <div class="tool-panel-header">
+            <h3>Generated Appeal Letter</h3>
+            <div style="display:flex;gap:8px;align-items:center;" id="output-actions" style="display:none;">
+              <div id="generating-badge" style="display:none;" class="generating-badge">
+                <div class="dot-pulse"><span></span><span></span><span></span></div>
+                Generating...
+              </div>
+              <button class="copy-btn" id="copy-btn" style="display:none;">📋 Copy</button>
+            </div>
+          </div>
+          <div class="tool-panel-body">
+            <div class="output-placeholder" id="output-placeholder">
+              <div class="icon">📋</div>
+              <p>Fill in the claim details and click <strong>Generate Appeal Letter</strong> to create a professional appeal.</p>
+            </div>
+            <div class="output-area" id="output" style="display:none;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (!requireAuth()) { /* redirected */ }
+  initUserInfo();
+  initLogoutButtons();
+  setActiveNav('denial-appeal');
+
+  const form = document.getElementById('appeal-form');
+  const outputEl = document.getElementById('output');
+  const placeholderEl = document.getElementById('output-placeholder');
+  const generateBtn = document.getElementById('generate-btn');
+  const copyBtn = document.getElementById('copy-btn');
+  const generatingBadge = document.getElementById('generating-badge');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      patientName: document.getElementById('patientName').value,
+      dob: document.getElementById('dob').value,
+      memberId: document.getElementById('memberId').value,
+      insurancePlan: document.getElementById('insurancePlan').value,
+      serviceDate: document.getElementById('serviceDate').value,
+      claimNumber: document.getElementById('claimNumber').value,
+      cptCodes: document.getElementById('cptCodes').value,
+      diagnosisCodes: document.getElementById('diagnosisCodes').value,
+      providerName: document.getElementById('providerName').value,
+      npi: document.getElementById('npi').value,
+      denialReason: document.getElementById('denialReason').value
+    };
+
+    showOutputPanel(outputEl, placeholderEl);
+    generatingBadge.style.display = 'flex';
+    copyBtn.style.display = 'none';
+
+    await streamToolResponse(
+      '/tools/denial-appeal',
+      data,
+      outputEl,
+      () => { setButtonLoading(generateBtn, true, 'Generate Appeal Letter'); },
+      (text) => {
+        setButtonLoading(generateBtn, false, 'Generate Appeal Letter');
+        generatingBadge.style.display = 'none';
+        if (text) copyBtn.style.display = 'inline-flex';
+      }
+    );
+  });
+
+  copyBtn.addEventListener('click', () => {
+    copyToClipboard(outputEl.textContent, copyBtn);
+  });
+</script>
+</body>
+</html>

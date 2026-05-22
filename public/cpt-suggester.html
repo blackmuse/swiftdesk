@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — CPT/ICD Code Suggester</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">⚡</div>
+      <span class="sidebar-brand">SwiftDesk</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-label">Overview</div>
+        <a href="/dashboard.html" class="nav-item" data-page="dashboard">
+          <span class="nav-icon">🏠</span> Dashboard
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/denial-appeal.html" class="nav-item" data-page="denial-appeal">
+          <span class="nav-icon">📋</span> Denial Appeal Writer
+        </a>
+        <a href="/cpt-suggester.html" class="nav-item active" data-page="cpt-suggester">
+          <span class="nav-icon">🔬</span> CPT/ICD Suggester
+        </a>
+        <a href="/ar-followup.html" class="nav-item" data-page="ar-followup">
+          <span class="nav-icon">📞</span> AR Follow-up Generator
+        </a>
+        <a href="/monthly-report.html" class="nav-item" data-page="monthly-report">
+          <span class="nav-icon">📊</span> Monthly Report Builder
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Workflow Tools</div>
+        <a href="/patient-statement.html" class="nav-item" data-page="patient-statement">
+          <span class="nav-icon">🧾</span> Patient Statement
+        </a>
+        <a href="/prior-auth.html" class="nav-item" data-page="prior-auth">
+          <span class="nav-icon">✅</span> Prior Auth Assistant
+        </a>
+        <a href="/eob-interpreter.html" class="nav-item" data-page="eob-interpreter">
+          <span class="nav-icon">📄</span> EOB Interpreter
+        </a>
+        <a href="/charge-capture.html" class="nav-item" data-page="charge-capture">
+          <span class="nav-icon">🔍</span> Charge Capture Check
+        </a>
+        <a href="/credentialing.html" class="nav-item" data-page="credentialing">
+          <span class="nav-icon">🏥</span> Credentialing Helper
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Account</div>
+        <a href="#" class="nav-item" data-logout>
+          <span class="nav-icon">🚪</span> Log Out
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" data-user-avatar>J</div>
+        <div>
+          <div class="user-name" data-user-name>Loading...</div>
+          <div class="user-plan" data-user-plan>Free Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1>🔬 CPT/ICD Code Suggester</h1>
+        <p style="margin:0">Paste clinical notes to get accurate CPT codes, ICD-10 codes, and modifiers.</p>
+      </div>
+      <span class="badge badge-green">AI-Powered</span>
+    </div>
+
+    <div class="page-body">
+      <div class="tool-layout">
+
+        <!-- INPUT PANEL -->
+        <div class="tool-panel">
+          <div class="tool-panel-header">
+            <h3>Clinical Documentation</h3>
+          </div>
+          <div class="tool-panel-body">
+            <form id="cpt-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="specialty">Medical Specialty</label>
+                  <select id="specialty">
+                    <option value="">Select specialty...</option>
+                    <option>Internal Medicine</option>
+                    <option>Family Medicine</option>
+                    <option>Cardiology</option>
+                    <option>Orthopedics</option>
+                    <option>Neurology</option>
+                    <option>Gastroenterology</option>
+                    <option>Dermatology</option>
+                    <option>Psychiatry</option>
+                    <option>Radiology</option>
+                    <option>Surgery (General)</option>
+                    <option>Emergency Medicine</option>
+                    <option>Pediatrics</option>
+                    <option>OB/GYN</option>
+                    <option>Urology</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="visitType">Visit Type</label>
+                  <select id="visitType">
+                    <option value="">Select type...</option>
+                    <option>New Patient Office Visit</option>
+                    <option>Established Patient Office Visit</option>
+                    <option>Telehealth Visit</option>
+                    <option>Inpatient Admission</option>
+                    <option>Inpatient Follow-up</option>
+                    <option>Emergency Department</option>
+                    <option>Outpatient Surgery</option>
+                    <option>Preventive Care</option>
+                    <option>Annual Wellness Visit</option>
+                    <option>Procedure Only</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="clinicalNotes">Clinical Notes / SOAP Note *</label>
+                <textarea id="clinicalNotes" style="min-height:240px;" placeholder="Paste the full clinical note, SOAP note, procedure report, or operative report here...
+
+Example:
+CC: Patient presents with chest pain and shortness of breath for 3 days.
+HPI: 58-year-old male with history of hypertension and type 2 diabetes presenting with exertional chest pain, 7/10 severity, radiating to left arm...
+PE: BP 145/92, HR 88, EKG shows ST elevation in V1-V4...
+A/P: STEMI - admitted for cardiac catheterization..." required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="additionalContext">Additional Context</label>
+                <input type="text" id="additionalContext" placeholder="e.g., Patient is Medicare, global period applies, prior auth obtained">
+              </div>
+              <button type="submit" class="btn btn-success btn-full" id="generate-btn">
+                Suggest Codes
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- OUTPUT PANEL -->
+        <div class="tool-panel" style="position:sticky;top:24px;">
+          <div class="tool-panel-header">
+            <h3>Code Suggestions</h3>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <div id="generating-badge" style="display:none;" class="generating-badge">
+                <div class="dot-pulse"><span></span><span></span><span></span></div>
+                Analyzing...
+              </div>
+              <button class="copy-btn" id="copy-btn" style="display:none;">📋 Copy</button>
+            </div>
+          </div>
+          <div class="tool-panel-body">
+            <div class="output-placeholder" id="output-placeholder">
+              <div class="icon">🔬</div>
+              <p>Paste clinical documentation and click <strong>Suggest Codes</strong> to receive CPT and ICD-10 code recommendations.</p>
+            </div>
+            <div class="output-area" id="output" style="display:none;font-family:inherit;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (!requireAuth()) { /* redirected */ }
+  initUserInfo();
+  initLogoutButtons();
+  setActiveNav('cpt-suggester');
+
+  const form = document.getElementById('cpt-form');
+  const outputEl = document.getElementById('output');
+  const placeholderEl = document.getElementById('output-placeholder');
+  const generateBtn = document.getElementById('generate-btn');
+  const copyBtn = document.getElementById('copy-btn');
+  const generatingBadge = document.getElementById('generating-badge');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      clinicalNotes: document.getElementById('clinicalNotes').value,
+      specialty: document.getElementById('specialty').value,
+      visitType: document.getElementById('visitType').value,
+      additionalContext: document.getElementById('additionalContext').value
+    };
+
+    showOutputPanel(outputEl, placeholderEl);
+    generatingBadge.style.display = 'flex';
+    copyBtn.style.display = 'none';
+
+    await streamToolResponse(
+      '/tools/cpt-suggester',
+      data,
+      outputEl,
+      () => { setButtonLoading(generateBtn, true, 'Suggest Codes'); },
+      (text) => {
+        setButtonLoading(generateBtn, false, 'Suggest Codes');
+        generatingBadge.style.display = 'none';
+        if (text) copyBtn.style.display = 'inline-flex';
+      }
+    );
+  });
+
+  copyBtn.addEventListener('click', () => {
+    copyToClipboard(outputEl.textContent, copyBtn);
+  });
+</script>
+</body>
+</html>

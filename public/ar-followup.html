@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — AR Follow-up Generator</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">⚡</div>
+      <span class="sidebar-brand">SwiftDesk</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-label">Overview</div>
+        <a href="/dashboard.html" class="nav-item" data-page="dashboard">
+          <span class="nav-icon">🏠</span> Dashboard
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/denial-appeal.html" class="nav-item" data-page="denial-appeal">
+          <span class="nav-icon">📋</span> Denial Appeal Writer
+        </a>
+        <a href="/cpt-suggester.html" class="nav-item" data-page="cpt-suggester">
+          <span class="nav-icon">🔬</span> CPT/ICD Suggester
+        </a>
+        <a href="/ar-followup.html" class="nav-item active" data-page="ar-followup">
+          <span class="nav-icon">📞</span> AR Follow-up Generator
+        </a>
+        <a href="/monthly-report.html" class="nav-item" data-page="monthly-report">
+          <span class="nav-icon">📊</span> Monthly Report Builder
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Workflow Tools</div>
+        <a href="/patient-statement.html" class="nav-item" data-page="patient-statement">
+          <span class="nav-icon">🧾</span> Patient Statement
+        </a>
+        <a href="/prior-auth.html" class="nav-item" data-page="prior-auth">
+          <span class="nav-icon">✅</span> Prior Auth Assistant
+        </a>
+        <a href="/eob-interpreter.html" class="nav-item" data-page="eob-interpreter">
+          <span class="nav-icon">📄</span> EOB Interpreter
+        </a>
+        <a href="/charge-capture.html" class="nav-item" data-page="charge-capture">
+          <span class="nav-icon">🔍</span> Charge Capture Check
+        </a>
+        <a href="/credentialing.html" class="nav-item" data-page="credentialing">
+          <span class="nav-icon">🏥</span> Credentialing Helper
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Account</div>
+        <a href="#" class="nav-item" data-logout>
+          <span class="nav-icon">🚪</span> Log Out
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" data-user-avatar>J</div>
+        <div>
+          <div class="user-name" data-user-name>Loading...</div>
+          <div class="user-plan" data-user-plan>Free Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1>📞 AR Follow-up Generator</h1>
+        <p style="margin:0">Generate phone scripts, follow-up emails, and escalation paths for outstanding AR.</p>
+      </div>
+      <span class="badge badge-amber">Revenue Recovery</span>
+    </div>
+
+    <div class="page-body">
+      <div class="tool-layout">
+
+        <!-- INPUT PANEL -->
+        <div class="tool-panel">
+          <div class="tool-panel-header">
+            <h3>Account Details</h3>
+          </div>
+          <div class="tool-panel-body">
+            <form id="ar-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="patientName">Patient Name *</label>
+                  <input type="text" id="patientName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="accountNumber">Account Number</label>
+                  <input type="text" id="accountNumber" placeholder="ACC-2024-00123">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="balance">Outstanding Balance ($) *</label>
+                  <input type="number" id="balance" placeholder="1250.00" step="0.01" required>
+                </div>
+                <div class="form-group">
+                  <label for="daysPending">Days Pending</label>
+                  <input type="number" id="daysPending" placeholder="45">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="insurancePlan">Insurance Plan</label>
+                  <input type="text" id="insurancePlan" placeholder="Aetna PPO">
+                </div>
+                <div class="form-group">
+                  <label for="claimNumber">Claim Number</label>
+                  <input type="text" id="claimNumber" placeholder="CLM-2024-567890">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="serviceDate">Service Date</label>
+                  <input type="date" id="serviceDate">
+                </div>
+                <div class="form-group">
+                  <label for="contactName">Insurance Contact Name</label>
+                  <input type="text" id="contactName" placeholder="AR Department">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="previousActions">Previous Actions Taken</label>
+                <textarea id="previousActions" style="min-height:100px;" placeholder="e.g., Called on 10/15 - claim was in process. Resubmitted on 10/20 with additional documentation. No response yet."></textarea>
+              </div>
+              <button type="submit" class="btn btn-full" style="background:var(--accent);color:white;" id="generate-btn">
+                Generate Follow-up Materials
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- OUTPUT PANEL -->
+        <div class="tool-panel" style="position:sticky;top:24px;">
+          <div class="tool-panel-header">
+            <h3>Follow-up Materials</h3>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <div id="generating-badge" style="display:none;" class="generating-badge">
+                <div class="dot-pulse"><span></span><span></span><span></span></div>
+                Generating...
+              </div>
+              <button class="copy-btn" id="copy-btn" style="display:none;">📋 Copy</button>
+            </div>
+          </div>
+          <div class="tool-panel-body">
+            <div class="output-placeholder" id="output-placeholder">
+              <div class="icon">📞</div>
+              <p>Enter account details and click <strong>Generate Follow-up Materials</strong> to get phone scripts, email templates, and escalation paths.</p>
+            </div>
+            <div class="output-area" id="output" style="display:none;font-family:inherit;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (!requireAuth()) { /* redirected */ }
+  initUserInfo();
+  initLogoutButtons();
+  setActiveNav('ar-followup');
+
+  const form = document.getElementById('ar-form');
+  const outputEl = document.getElementById('output');
+  const placeholderEl = document.getElementById('output-placeholder');
+  const generateBtn = document.getElementById('generate-btn');
+  const copyBtn = document.getElementById('copy-btn');
+  const generatingBadge = document.getElementById('generating-badge');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      patientName: document.getElementById('patientName').value,
+      accountNumber: document.getElementById('accountNumber').value,
+      balance: document.getElementById('balance').value,
+      daysPending: document.getElementById('daysPending').value,
+      insurancePlan: document.getElementById('insurancePlan').value,
+      claimNumber: document.getElementById('claimNumber').value,
+      serviceDate: document.getElementById('serviceDate').value,
+      contactName: document.getElementById('contactName').value,
+      previousActions: document.getElementById('previousActions').value
+    };
+
+    showOutputPanel(outputEl, placeholderEl);
+    generatingBadge.style.display = 'flex';
+    copyBtn.style.display = 'none';
+
+    await streamToolResponse(
+      '/tools/ar-followup',
+      data,
+      outputEl,
+      () => { setButtonLoading(generateBtn, true, 'Generate Follow-up Materials'); },
+      (text) => {
+        setButtonLoading(generateBtn, false, 'Generate Follow-up Materials');
+        generatingBadge.style.display = 'none';
+        if (text) copyBtn.style.display = 'inline-flex';
+      }
+    );
+  });
+
+  copyBtn.addEventListener('click', () => {
+    copyToClipboard(outputEl.textContent, copyBtn);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftDesk — Prior Authorization Assistant</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">⚡</div>
+      <span class="sidebar-brand">SwiftDesk</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-label">Overview</div>
+        <a href="/dashboard.html" class="nav-item" data-page="dashboard">
+          <span class="nav-icon">🏠</span> Dashboard
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">AI Tools</div>
+        <a href="/denial-appeal.html" class="nav-item" data-page="denial-appeal">
+          <span class="nav-icon">📋</span> Denial Appeal Writer
+        </a>
+        <a href="/cpt-suggester.html" class="nav-item" data-page="cpt-suggester">
+          <span class="nav-icon">🔬</span> CPT/ICD Suggester
+        </a>
+        <a href="/ar-followup.html" class="nav-item" data-page="ar-followup">
+          <span class="nav-icon">📞</span> AR Follow-up Generator
+        </a>
+        <a href="/monthly-report.html" class="nav-item" data-page="monthly-report">
+          <span class="nav-icon">📊</span> Monthly Report Builder
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Workflow Tools</div>
+        <a href="/patient-statement.html" class="nav-item" data-page="patient-statement">
+          <span class="nav-icon">🧾</span> Patient Statement
+        </a>
+        <a href="/prior-auth.html" class="nav-item active" data-page="prior-auth">
+          <span class="nav-icon">✅</span> Prior Auth Assistant
+        </a>
+        <a href="/eob-interpreter.html" class="nav-item" data-page="eob-interpreter">
+          <span class="nav-icon">📄</span> EOB Interpreter
+        </a>
+        <a href="/charge-capture.html" class="nav-item" data-page="charge-capture">
+          <span class="nav-icon">🔍</span> Charge Capture Check
+        </a>
+        <a href="/credentialing.html" class="nav-item" data-page="credentialing">
+          <span class="nav-icon">🏥</span> Credentialing Helper
+        </a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Account</div>
+        <a href="#" class="nav-item" data-logout>
+          <span class="nav-icon">🚪</span> Log Out
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar" data-user-avatar>J</div>
+        <div>
+          <div class="user-name" data-user-name>Loading...</div>
+          <div class="user-plan" data-user-plan>Free Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1>✅ Prior Authorization Assistant</h1>
+        <p style="margin:0">Write compelling prior authorization requests with clinical justifications to maximize approvals.</p>
+      </div>
+      <span class="badge badge-blue">Approvals</span>
+    </div>
+
+    <div class="page-body">
+      <div class="tool-layout">
+
+        <!-- INPUT PANEL -->
+        <div class="tool-panel">
+          <div class="tool-panel-header">
+            <h3>Authorization Request Details</h3>
+          </div>
+          <div class="tool-panel-body">
+            <form id="prior-auth-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="patientName">Patient Name *</label>
+                  <input type="text" id="patientName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="dob">Date of Birth</label>
+                  <input type="date" id="dob">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="memberId">Member ID</label>
+                  <input type="text" id="memberId" placeholder="XYZ123456789">
+                </div>
+                <div class="form-group">
+                  <label for="insurancePlan">Insurance Plan</label>
+                  <input type="text" id="insurancePlan" placeholder="Aetna PPO">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="providerName">Requesting Provider</label>
+                  <input type="text" id="providerName" placeholder="Dr. Sarah Johnson, MD">
+                </div>
+                <div class="form-group">
+                  <label for="npi">NPI Number</label>
+                  <input type="text" id="npi" placeholder="1234567890">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="requestedService">Requested Service / Procedure *</label>
+                <input type="text" id="requestedService" placeholder="e.g., MRI of the lumbar spine, Cardiac catheterization" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cptCodes">CPT Code(s)</label>
+                  <input type="text" id="cptCodes" placeholder="72148, 72149">
+                </div>
+                <div class="form-group">
+                  <label for="diagnosisCodes">ICD-10 Diagnosis Code(s)</label>
+                  <input type="text" id="diagnosisCodes" placeholder="M54.5, M51.16">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="urgency">Urgency</label>
+                  <select id="urgency">
+                    <option value="Routine">Routine</option>
+                    <option value="Urgent">Urgent</option>
+                    <option value="Emergent">Emergent</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="previousTreatments">Prior Treatments Tried</label>
+                  <input type="text" id="previousTreatments" placeholder="e.g., 6 weeks PT, NSAIDs, chiropractic">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="clinicalJustification">Clinical Justification / Notes</label>
+                <textarea id="clinicalJustification" style="min-height:140px;" placeholder="Describe the patient's condition, symptoms, relevant history, and why this service is medically necessary...
+
+e.g., Patient presents with 3-month history of progressive lower back pain radiating to bilateral lower extremities with associated numbness and weakness. Conservative treatment including physical therapy and NSAIDs has failed to provide relief. Neurological symptoms are worsening, raising concern for nerve compression requiring further evaluation."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="generate-btn">
+                Generate Prior Auth Request
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- OUTPUT PANEL -->
+        <div class="tool-panel" style="position:sticky;top:24px;">
+          <div class="tool-panel-header">
+            <h3>Prior Authorization Request</h3>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <div id="generating-badge" style="display:none;" class="generating-badge">
+                <div class="dot-pulse"><span></span><span></span><span></span></div>
+                Drafting request...
+              </div>
+              <button class="copy-btn" id="copy-btn" style="display:none;">📋 Copy</button>
+            </div>
+          </div>
+          <div class="tool-panel-body">
+            <div class="output-placeholder" id="output-placeholder">
+              <div class="icon">✅</div>
+              <p>Fill in the authorization details and click <strong>Generate Prior Auth Request</strong> to create a clinically compelling prior authorization letter.</p>
+            </div>
+            <div class="output-area" id="output" style="display:none;font-family:inherit;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (!requireAuth()) { /* redirected */ }
+  initUserInfo();
+  initLogoutButtons();
+  setActiveNav('prior-auth');
+
+  const form = document.getElementById('prior-auth-form');
+  const outputEl = document.getElementById('output');
+  const placeholderEl = document.getElementById('output-placeholder');
+  const generateBtn = document.getElementById('generate-btn');
+  const copyBtn = document.getElementById('copy-btn');
+  const generatingBadge = document.getElementById('generating-badge');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      patientName: document.getElementById('patientName').value,
+      dob: document.getElementById('dob').value,
+      memberId: document.getElementById('memberId').value,
+      insurancePlan: document.getElementById('insurancePlan').value,
+      providerName: document.getElementById('providerName').value,
+      npi: document.getElementById('npi').value,
+      requestedService: document.getElementById('requestedService').value,
+      cptCodes: document.getElementById('cptCodes').value,
+      diagnosisCodes: document.getElementById('diagnosisCodes').value,
+      urgency: document.getElementById('urgency').value,
+      previousTreatments: document.getElementById('previousTreatments').value,
+      clinicalJustification: document.getElementById('clinicalJustification').value
+    };
+
+    showOutputPanel(outputEl, placeholderEl);
+    generatingBadge.style.display = 'flex';
+    copyBtn.style.display = 'none';
+
+    await streamToolResponse('/tools/prior-auth', data, outputEl,
+      () => { setButtonLoading(generateBtn, true, 'Generate Prior Auth Request'); },
+      (text) => {
+        setButtonLoading(generateBtn, false, 'Generate Prior Auth Request');
+        generatingBadge.style.display = 'none';
+        if (text) copyBtn.style.display = 'inline-flex';
+      }
+    );
+  });
+
+  copyBtn.addEventListener('click', () => copyToClipboard(outputEl.textContent, copyBtn));
+</script>
+</body>
+</html>
